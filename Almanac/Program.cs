@@ -16,7 +16,9 @@ namespace Almanac
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Authorization authorization = new Authorization();
+            Application.Run(authorization);
+            Application.Run(new Form1(authorization.User_id));
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Almanac
         int sX=600, sY=800; public string[] nameMonth; string[] codeToday;
         static int day = 0, dayW = 0, month = 0, year = 0, hour = 0, minute = 0, sec = 0;        
 
-        public Form1()
+        public Form1(int user_id)
         {
             InitializeComponent();
             //window settings          
