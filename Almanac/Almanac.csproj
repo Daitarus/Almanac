@@ -209,6 +209,7 @@
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="ScriptToCode.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="WriteFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

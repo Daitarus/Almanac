@@ -23,8 +23,9 @@ namespace Almanac
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Database database = new Database(@"Server=DESKTOP-T0L4M6U\SQLEXPRESS;Database=Database2;Trusted_Connection=True;");
-            database.Close();
+            Database user_db = new Database(@"Server=DESKTOP-T0L4M6U\SQLEXPRESS;Database=Almanac_user;Trusted_Connection=True;");
+            //authorization
+            user_db.Close();
             this.Close();
         }
 

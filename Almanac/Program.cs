@@ -18,7 +18,10 @@ namespace Almanac
             Application.SetCompatibleTextRenderingDefault(false);
             Authorization authorization = new Authorization();
             Application.Run(authorization);
-            Application.Run(new Form1(authorization.User_id));
+            if (authorization.User_id != 0)
+            {
+                Application.Run(new Form1(authorization.User_id));
+            }
         }
     }
 }
