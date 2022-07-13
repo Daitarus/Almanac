@@ -132,5 +132,34 @@ namespace Almanac
             }
             return users;
         }
+        public User GetUserByLogin(string login)
+        {
+            User user = new User();
+            SqlDataReader dataReader = null;
+            try
+            {
+                SqlCommand readUsers = new SqlCommand($"SELECT * From Users WHERE _Login = '{login}'", sqlConnection);
+                dataReader = readUsers.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    user.id = Convert.ToInt32(dataReader["Id"]);
+                    user.login = Convert.ToString(dataReader["_Login"]);
+                    user.password = Convert.ToString(dataReader["_Password"]);
+                    //user.id_record = Convert.ToInt32(dataReader["Id_record"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if ((dataReader != null) && (!dataReader.IsClosed))
+                {
+                    dataReader.Close();
+                }
+            }
+            return user;
+        }
     }
 }

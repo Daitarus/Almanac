@@ -58,15 +58,10 @@ namespace Almanac
             //check all login
             if (flag)
             {
-                List<User> users = new List<User>();
-                users = user_db.GetAllUsers();
-                for (int i = 0; i < users.Count; i++)
+                User ch_user = user_db.GetUserByLogin(user.login);
+                if(user.login==ch_user.login)
                 {
-                    if (user.login == users[i].login)
-                    {
-                        flag = false;
-                        break;
-                    }
+                    flag = false;
                 }
                 if(!flag)
                 {
