@@ -13,11 +13,13 @@ namespace Almanac
     public partial class Authorization : Form
     {
         private int user_id = 0;
+        private string connectionString = null;
 
         public int User_id { get { return user_id; } }
 
-        public Authorization()
+        public Authorization(string _connectionString)
         {
+            connectionString = _connectionString;
             InitializeComponent();
         }
 
@@ -31,7 +33,7 @@ namespace Almanac
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Registration registration = new Registration();
+            Registration registration = new Registration(connectionString);
             registration.Show();
         }
     }

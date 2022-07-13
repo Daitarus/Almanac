@@ -14,9 +14,11 @@ namespace Almanac
         [STAThread]
         static void Main()
         {
+            string connectionString = FileWork.FileReadLine(@"Data/ConnectionString");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Authorization authorization = new Authorization();
+
+            Authorization authorization = new Authorization(connectionString);
             Application.Run(authorization);
             if (authorization.User_id != 0)
             {

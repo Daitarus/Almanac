@@ -12,8 +12,10 @@ namespace Almanac
 {
     public partial class Registration : Form
     {
-        public Registration()
+        private string connectionString = null;
+        public Registration(string _connectionString)
         {
+            connectionString = _connectionString;
             InitializeComponent();
         }
 
@@ -48,7 +50,7 @@ namespace Almanac
             //conction DB
             if(flag)
             {
-                user_db = new Database(@"Data Source=DESKTOP-T0L4M6U\SQLEXPRESS;Initial Catalog=Almanac_user;User Id = sa;Password = 123456789123456;TrustServerCertificate=True");
+                user_db = new Database(connectionString);
                 flag = user_db.FlagConection;
                 if(!flag)
                 {
