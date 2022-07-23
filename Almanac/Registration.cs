@@ -80,6 +80,10 @@ namespace Almanac
                     MessageBox.Show("Вы успешно зарегистрированы!");
                     this.Close();
                 }
+                else
+                {
+                    label4.Text = "Ошибка регистрации !!!";
+                }
             }
         }
     }
